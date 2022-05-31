@@ -21,3 +21,7 @@ python manage.py migrate
 - Ejecutar proyecto
 ```bash
 python manage.py runserver
+
+- Entrar a 
+```bash
+http://127.0.0.1:8000/app-1/

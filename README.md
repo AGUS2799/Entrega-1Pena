@@ -26,4 +26,5 @@ python manage.py runserver
 - Entrar a 
 ```bash
 http://127.0.0.1:8000/app-1/
+Y probar las funcionalidades que estan en la barra de navegacion 
 ```

@@ -1,0 +1,26 @@
+{% extends "app_1/index.html" %}
+{% load static %}
+{% block app_1_content %}
+
+<h2>Lista de Jugadores</h2>
+<a class="card_custom" href="{% url 'app_1:NuevosJugadores' %}">Agregar Jugadores</a>
+<hr>
+</hr>
+<ul>
+    {% for player in players %}
+    <li>
+        {{player}}
+        (
+        <a href="{% url 'app_1:EditPlayer' player.id %}">
+            <i class="fa fa-pencil" style="color: rgb(38, 113, 41);"></i>
+        </a>
+        |
+        <a href="{% url 'app_1:DeletePlayer' player.id %}">
+            <i class="fa fa-trash" style="color: rgb(205, 61, 61);"></i>
+        </a>
+        )
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

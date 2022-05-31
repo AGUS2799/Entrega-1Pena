@@ -1,0 +1,26 @@
+{% extends "app_1/index.html" %}
+{% load static %}
+{% block app_1_content %}
+
+<h2>Lista de Ganadares</h2>
+<a class="card_custom" href="{% url 'app_1:NewWinners' %}">Agregar Ganadares</a>
+<hr>
+</hr>
+<ul>
+    {% for win in winners %}
+    <li>
+        {{win.name_couple}} 
+        (
+        <a href="{% url 'app_1:EditWinners' win.id %}">
+            <i class="fa fa-pencil" style="color: rgb(38, 113, 41);"></i>
+        </a>
+        |
+        <a href="{% url 'app_1:DeleteWinners' win.id %}">
+            <i class="fa fa-trash" style="color: rgb(205, 61, 61);"></i>
+        </a>
+        )
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

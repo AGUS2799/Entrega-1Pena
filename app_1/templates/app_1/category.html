@@ -1,0 +1,25 @@
+{% extends "app_1/index.html" %}
+{% load static %}
+{% block app_1_content %}
+
+<h2>Lista de Cursos</h2>
+<a class="card_custom" href="{% url 'app_1:NewCategory' %}">Agregar Nueva Categoria</a>
+<hr></hr>
+<ul>
+    {% for cate in category %}
+    <li>
+        Categoria: {{cate.category}} {{cate.n_category}}
+        (
+        <a href="{% url 'app_1:EditCategory' cate.id %}">
+            <i class="fa fa-pencil" style="color: rgb(38, 113, 41);"></i>
+        </a>
+        |
+        <a href="{% url 'app_1:DeleteCategory' cate.id %}">
+            <i class="fa fa-trash" style="color: rgb(205, 61, 61);"></i>
+        </a>
+        )
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

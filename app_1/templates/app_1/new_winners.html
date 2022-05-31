@@ -1,0 +1,17 @@
+{% extends "app_1/index.html" %}
+{% load static %}
+{% block app_1_content %}
+
+<h2>Agregar Ganadores</h2>
+<hr></hr>
+
+<form action="" method="POST">
+    {% csrf_token %}
+
+    {{ winners_form.as_p }}
+
+    <input type="submit" class="btn btn-primary" value="Agregar Ganadores" />
+
+</form>
+
+{% endblock %}
